@@ -1,101 +1,177 @@
-# Stack-using-LINKED-LIST-SINGLY-LINKED-LIST-
-Stack Implementation using Singly Linked List in C
-This project demonstrates a simple stack (LIFO - Last In First Out) implementation using a Singly Linked List (SLL) in C programming language.
+# 📚 Stack Implementation using Singly Linked List in C
 
-Features
-Push Operation: Insert an element into the stack.
+## 📌 Project Overview
 
-Pop Operation: Remove the top element from the stack.
+This project demonstrates the implementation of a **Stack Data Structure (LIFO - Last In First Out)** using a **Singly Linked List (SLL)** in the C programming language.
 
-Peek Operation: View the top element without removing it.
+Unlike array-based stacks, this implementation uses dynamic memory allocation, allowing the stack to grow and shrink efficiently at runtime.
 
-Display Operation: Show all elements present in the stack.
+---
 
-Handles Stack Overflow (memory full) and Stack Underflow (no elements) scenarios.
+## 🚀 Features
 
-Files
-stack_sll.c: Main source code file containing the full implementation.
+* **Push Operation** → Insert an element into the stack
+* **Pop Operation** → Remove the top element from the stack
+* **Peek Operation** → View the top element without removing it
+* **Display Operation** → Print all stack elements (top to bottom)
+* Handles:
 
-How It Works
-Each node in the singly linked list represents an element of the stack.
+  * Stack Overflow (memory allocation failure)
+  * Stack Underflow (empty stack)
 
-The top of the stack is managed by a pointer (tos - Top Of Stack).
+---
 
-Push creates a new node at the beginning of the list.
+## 🧠 Data Structure Concept
 
-Pop deletes the node at the beginning and returns its data.
+* Each node in the linked list represents a stack element
+* A pointer called **TOS (Top Of Stack)** keeps track of the top node
+* Operations are performed at the **beginning of the linked list**
 
-Peek simply returns the data of the top node without modifying the stack.
+---
 
-Display traverses the list and prints all node values from top to bottom.
+## ⚙️ How It Works
 
-Sample Menu
-bash
-Copy
-Edit
+* **Push**
+
+  * Create a new node using `malloc()`
+  * Insert it at the beginning
+  * Update TOS pointer
+
+* **Pop**
+
+  * Remove the first node
+  * Return its value
+  * Free memory using `free()`
+
+* **Peek**
+
+  * Return the value of the top node without deletion
+
+* **Display**
+
+  * Traverse the linked list from top to bottom
+
+---
+
+## 📂 Project Structure
+
+```bash
+stack_sll.c
+README.md
+```
+
+---
+
+## 🖥️ Sample Menu
+
+```bash
 1. Push
 2. Pop
 3. Display All
 4. Display Peek Value
-How to Compile and Run
-bash
-Copy
-Edit
+```
+
+---
+
+## ▶️ How to Compile and Run
+
+### Step 1: Compile
+
+```bash
 gcc stack_sll.c -o stack_sll
+```
+
+### Step 2: Run
+
+```bash
 ./stack_sll
-Example Usage
-mathematica
-Copy
-Edit
+```
+
+---
+
+## 💻 Example Execution
+
+```bash
 Enter the option: 1
 Enter a number to be pushed: 10
+
 Enter the option: 1
 Enter a number to be pushed: 20
+
 Enter the option: 3
 The Stack Elements are:
 20
 10
+
 Enter the option: 2
 Popped Element is 20
+
 Enter the option: 4
 Peek Element is 10
-Requirements
-GCC Compiler
+```
 
-Basic understanding of pointers and dynamic memory management in C.
+---
 
-Notes
-malloc() is used to dynamically allocate memory for each new node.
+## ⚠️ Error Handling
 
-free() is used to deallocate memory after popping elements.
+* **Stack Underflow**
 
-Error handling included for both overflow (rare) and underflow (common) conditions.
+  * Occurs when attempting to pop or peek from an empty stack
 
-fflush(stdin) is used to clear the input buffer before taking character input, although it is not standard practice in modern C. Refer to: Why fflush(stdin) is Undefined Behavior in C (Stack Overflow).
+* **Stack Overflow**
 
-References
-GeeksforGeeks - Stack Data Structure
+  * Occurs if `malloc()` fails (rare but handled)
 
-GeeksforGeeks - Stack using Linked List
+---
 
-TutorialsPoint - Data Structure Stack
+## 🛠️ Requirements
 
-Would you also like me to create a nice badge layout or a GitHub Actions workflow suggestion for building/testing this project? 🚀
+* GCC Compiler
+* Basic knowledge of:
 
+  * Pointers
+  * Dynamic Memory Allocation
+  * Linked Lists
 
+---
 
+## 📌 Important Notes
 
+* `malloc()` is used for dynamic memory allocation
+* `free()` ensures no memory leaks after pop operations
+* Avoid using `fflush(stdin)` in modern C as it leads to undefined behavior
 
+---
 
+## 🔮 Future Improvements
 
+* Add size tracking of stack
+* Implement stack using doubly linked list
+* Add file-based input/output
+* Convert into modular code with header files
 
+---
 
+## 📚 References
 
+* GeeksforGeeks – Stack Data Structure
+* GeeksforGeeks – Stack using Linked List
+* TutorialsPoint – Stack in Data Structures
 
+---
 
+## 👨‍💻 Author
 
+Developed as part of Data Structures learning using C.
 
+---
 
+## 📜 License
 
+This project is open-source and free to use for educational purposes.
 
+---
 
+## ⭐ Contribution
+
+Feel free to fork this repository and enhance the implementation with additional features or optimizations.
